@@ -27,6 +27,7 @@
 ## Project Experience | 项目经历
 
 ### SMB ONE App (UAE · e& Etisalat)
+
 **IBM · 2025.10 — Present**
 `Flutter` `Dart` `AI Agent` `NLP`
 
@@ -37,8 +38,9 @@ Cutting-edge smart enterprise service app for SMBs in the UAE. Provides Business
 ---
 
 ### TechCheck App — IBM Mainframe QA System
+
 **IBM · 2023.12 — Present**
-`iOS` `Android` `Swift` `Objective-C` `MQTT`
+`iOS` `Android` `Swift` `MQTT`
 
 Critical QA monitoring system for IBM Mainframe delivery. Engineered an advanced tracking framework using MQTT protocol to ensure rigorous quality control. Maintains a comprehensive digital audit trail capturing shipping records, high-resolution photography, and defect logs to guarantee zero-defect delivery standards.
 
@@ -47,8 +49,9 @@ IBM 大型机交付的关键质量监控系统。基于 MQTT 协议构建先进�
 ---
 
 ### Tianshi Group — Core Business System
+
 **IBM · 2022.09 — 2023.11**
-`iOS` `Android` `Frontend` `Swift` `Objective-C`
+`iOS` `Android` `Frontend` `Swift`
 
 Core business system providing internal staff office, audit, report and other functions. Reviewed existing iOS architecture and provided a highly robust multi-platform reconstruction scheme. Added two major modules — audit management and supervision system — to promote digital transformation with an all-platform scheme.
 
@@ -57,6 +60,7 @@ Core business system providing internal staff office, audit, report and other fu
 ---
 
 ### Irish Water — Work Order Management
+
 **IBM · 2022.04 — 2022.09**
 `Android` `React Native` `Java` `TypeScript` `GraphQL` `MQTT`
 
@@ -67,8 +71,9 @@ Work order management app for Android on Irish Water System, enabling field work
 ---
 
 ### Qstream — Enterprise Knowledge Platform
+
 **IBM · 2022.02 — 2022.08**
-`iOS` `Android` `React Native` `Swift` `Objective-C` `Java`
+`iOS` `Android` `React Native` `Swift`
 
 Helps enterprise organizations reinforce critical knowledge, skills and behaviors in just minutes a day. Delivers high levels of continuous user engagement at an average of 93%+ through an engaging mobile experience.
 
@@ -77,8 +82,9 @@ Helps enterprise organizations reinforce critical knowledge, skills and behavior
 ---
 
 ### IBM Client Vantage
+
 **IBM · 2020.10 — 2022.02**
-`iOS` `Swift` `Objective-C`
+`iOS` `Swift`
 
 Innovative platform for delivering digital content, enabling users to create and consume content, engage clients, and tell a story with dashboard insights. A flagship internal IBM tool for client engagement and analytics.
 
@@ -87,8 +93,9 @@ Innovative platform for delivering digital content, enabling users to create and
 ---
 
 ### Sunac Butler Manager App 2.0
+
 **IBM Tianjin · 2020.05 — 2020.10**
-`iOS` `Swift` `Objective-C`
+`iOS` `Swift`
 
 Inner toB application including customer info management, fee management, KPI review, and task management. Version 2.0 added complete work-order management. Delivered full lifecycle of the iOS platform and cooperated with Asset team for full-stack feature integration.
 
@@ -97,8 +104,9 @@ Inner toB application including customer info management, fee management, KPI re
 ---
 
 ### JazzCash — Pakistan Banking App
+
 **IBM · 2020.07 — 2020.10**
-`iOS` `Swift` `Objective-C`
+`iOS` `Swift`
 
 Banking client app in Pakistan including transfer, account balance, card management, and life functions. Delivered comprehensive financial services to millions of users across Pakistan.
 
@@ -107,8 +115,9 @@ Banking client app in Pakistan including transfer, account balance, card managem
 ---
 
 ### Netherlands Schiphol Airport App + Admin Portal
+
 **IBM Tianjin · 2019.11 — 2020.06**
-`iOS` `Web` `Swift` `Vue` `Kubernetes` `DevOps` `VueX`
+`iOS` `Web` `Swift`
 
 Digitization of the entire Risk Assessment and Evaluation process for Amsterdam Schiphol Airport. Developed iOS native app with Swift on cloud-native Kubernetes backend. DevOps pipelines enabled fully automated CI/CD. Also built the Vue-based admin portal for incident report management.
 
@@ -117,6 +126,7 @@ Digitization of the entire Risk Assessment and Evaluation process for Amsterdam 
 ---
 
 ### IBM Safe-Drive
+
 **IBM Chengdu · 2018.10 — 2019.03**
 `iOS` `Swift` `Objective-C`
 
@@ -127,6 +137,7 @@ iOS app for drivers to detect auto start/stop driving, driving trip data collect
 ---
 
 ### IBM Solution Gateway (iGBS+) — Mobile Architect
+
 **IBM Chengdu · 2015.07 — 2019.07**
 `iOS` `Swift` `Objective-C`
 
@@ -137,6 +148,7 @@ IBM 业务解决方案网关，用于销售分析、搜索和管理。担任移�
 ---
 
 ### DynamicTenant + USBKey Security Tool
+
 **Dynamicode · Shanghai · 2013.05 — 2015.07**
 `iOS` `Objective-C` `PKI` `RSA` `SM2/SM3/SM4` `AES/DES`
 
@@ -147,6 +159,7 @@ DynamicTenant：支付宝商户管理工具，包含登录/登出、订单查询
 ---
 
 ### imiChat IM + Taotao English App
+
 **Mobim Technology · Shanghai · 2010.08 — 2013.05**
 `iOS` `Android` `MTK` `Objective-C` `Java`
 
@@ -159,6 +172,7 @@ Developed SDK tools for MTK platform and imiChat IM for 2.5G mobile phones. Buil
 ## Early Career | 早期经历
 
 ### Feature Phone SMS/Camera/Video
+
 **TCL JRD · Shanghai · 2010.01 — 2010.08**
 `Feature Phone` `C/C++`
 
@@ -169,6 +183,7 @@ For i-mobile (ISP in Thailand), worked on 2090/2290/6090 projects. Led Camera/Vi
 ---
 
 ### Nokia TD-SCDMA / LG GSM Mobile
+
 **Flextronics Mobile · Chengdu · 2008.03 — 2010.01**
 `ESIM RapidPlus` `C/C++`
 
@@ -179,6 +194,7 @@ Nokia TD-SCDMA: Organizer module (calculator, to-do list). LG GSM: SMS/EMS/STK m
 ---
 
 ### CDMA Feature Phone — BREW Platform
+
 **Hisense Mobile · Qingdao · 2006.10 — 2008.02**
 `BREW` `CDMA` `C/C++`
 
@@ -190,5 +206,5 @@ Designed and debugged Assistant Menu for DAXIAN/TCL CDMA phones on Qualcomm BREW
 
 ## Education | 教育背景
 
-**University of Electronic Science and Technology of China (UESTC) · 电子科技大学**
+**University of Electronic Science and Technology of China (UESTC) · 成都电子科技大学**
 Bachelor's Degree · Software Engineering · Chengdu, China · 本科 · 软件工程 · 中国成都
