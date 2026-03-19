@@ -3,444 +3,378 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andrew Wang 汪奇伟 — Resume</title>
+<title>Andrew Wang — Resume</title>
 <style>
-  :root {
-    --primary: #0066cc;
-    --secondary: #6b21e8;
-    --accent: #e53e3e;
-    --bg: #f5f7fa;
-    --bg3: #ffffff;
-    --text: #1a1a2e;
-    --text-dim: #5a6480;
-    --card-border: rgba(0,102,204,0.15);
-    --glow: 0 4px 24px rgba(0,102,204,0.12);
-  }
-  [data-theme="dark"] {
-    --primary: #00d4ff;
-    --secondary: #7b2ff7;
-    --bg: #0a0a0f;
-    --bg3: #1a1a28;
-    --text: #e8e8f0;
-    --text-dim: #8888aa;
-    --card-border: rgba(0,212,255,0.15);
-    --glow: 0 0 20px rgba(0,212,255,0.3);
-  }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; overflow-x:hidden; line-height:1.6; transition: background 0.3s, color 0.3s; }
-  body::before { content:''; position:fixed; inset:0; background: radial-gradient(ellipse at 20% 20%, rgba(107,33,232,0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(0,102,204,0.05) 0%, transparent 50%); pointer-events:none; z-index:0; }
-  body::after { content:''; position:fixed; inset:0; background-image: linear-gradient(rgba(0,102,204,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(0,102,204,0.04) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; z-index:0; }
-  [data-theme="dark"] body::before { background: radial-gradient(ellipse at 20% 20%, rgba(123,47,247,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(0,212,255,0.06) 0%, transparent 50%); }
-  [data-theme="dark"] body::after { background-image: linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px); background-size:60px 60px; }
-  .container { max-width:1000px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
-  .toolbar { position:fixed; top:20px; right:20px; z-index:1000; display:flex; gap:8px; }
-  .toolbar-btn { display:flex; align-items:center; gap:6px; padding:8px 16px; border-radius:50px; border:1px solid var(--card-border); background:var(--bg3); color:var(--text); font-size:13px; font-weight:500; cursor:pointer; transition:all 0.25s; box-shadow:0 2px 12px rgba(0,0,0,0.08); }
-  .toolbar-btn:hover { border-color:var(--primary); color:var(--primary); box-shadow:var(--glow); }
-  .hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 24px; position:relative; }
-  .hero-inner { max-width:700px; }
-  .hero-badge { display:inline-block; background:linear-gradient(135deg,rgba(0,102,204,0.1),rgba(107,33,232,0.1)); border:1px solid rgba(0,102,204,0.3); border-radius:50px; padding:6px 20px; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--primary); margin-bottom:28px; opacity:0; animation:fadeUp 0.8s ease 0.2s forwards; }
-  .hero-name { font-size:clamp(42px,8vw,80px); font-weight:800; line-height:1.1; background:linear-gradient(135deg,#1a1a2e 0%,var(--primary) 50%,var(--secondary) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; opacity:0; animation:fadeUp 0.8s ease 0.4s forwards; margin-bottom:8px; }
-  [data-theme="dark"] .hero-name { background:linear-gradient(135deg,#fff 0%,var(--primary) 50%,var(--secondary) 100%); -webkit-background-clip:text; background-clip:text; }
-  .hero-name-cn { font-size:clamp(20px,4vw,32px); font-weight:300; color:var(--text-dim); opacity:0; animation:fadeUp 0.8s ease 0.5s forwards; margin-bottom:24px; }
-  .hero-title { font-size:clamp(16px,3vw,22px); color:var(--primary); font-weight:400; opacity:0; animation:fadeUp 0.8s ease 0.6s forwards; margin-bottom:32px; }
-  .hero-contacts { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; opacity:0; animation:fadeUp 0.8s ease 0.8s forwards; }
-  .contact-item { display:flex; align-items:center; gap:8px; color:var(--text-dim); font-size:14px; padding:8px 16px; border:1px solid rgba(0,0,0,0.08); border-radius:8px; background:rgba(0,0,0,0.02); transition:all 0.3s; }
-  [data-theme="dark"] .contact-item { border-color:rgba(255,255,255,0.08); background:rgba(255,255,255,0.03); }
-  .contact-item:hover { border-color:var(--primary); color:var(--primary); }
-  .scroll-hint { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--text-dim); font-size:12px; letter-spacing:2px; opacity:0; animation:fadeIn 1s ease 1.5s forwards; }
-  .scroll-arrow { width:20px; height:20px; border-right:2px solid var(--primary); border-bottom:2px solid var(--primary); transform:rotate(45deg); animation:bounce 1.5s ease infinite; }
-  section { padding:80px 0; }
-  .section-header { display:flex; align-items:center; gap:16px; margin-bottom:48px; }
-  .section-number { font-size:12px; color:var(--primary); letter-spacing:3px; font-weight:600; }
-  .section-title { font-size:clamp(24px,4vw,36px); font-weight:700; background:linear-gradient(135deg,#1a1a2e,var(--text-dim)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-  [data-theme="dark"] .section-title { background:linear-gradient(135deg,#fff,var(--text-dim)); -webkit-background-clip:text; background-clip:text; }
-  .section-line { flex:1; height:1px; background:linear-gradient(90deg,rgba(0,102,204,0.4),transparent); }
-  .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-  .skill-card { background:var(--bg3); border:1px solid var(--card-border); border-radius:16px; padding:24px; transition:all 0.4s; opacity:0; transform:translateY(30px); box-shadow:0 2px 12px rgba(0,0,0,0.06); }
-  .skill-card.visible { opacity:1; transform:translateY(0); }
-  .skill-card:hover { border-color:var(--primary); box-shadow:var(--glow); transform:translateY(-4px); }
-  .skill-icon { font-size:28px; margin-bottom:12px; }
-  .skill-card h3 { font-size:15px; font-weight:600; color:var(--primary); margin-bottom:8px; }
-  .skill-card p { font-size:13px; color:var(--text-dim); line-height:1.6; }
-  .stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:20px; margin-bottom:60px; }
-  .stat-card { background:var(--bg3); border:1px solid var(--card-border); border-radius:16px; padding:28px 20px; text-align:center; opacity:0; transform:scale(0.9); transition:all 0.5s; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
-  .stat-card.visible { opacity:1; transform:scale(1); }
-  .stat-card:hover { border-color:var(--primary); box-shadow:var(--glow); }
-  .stat-number { font-size:42px; font-weight:800; background:linear-gradient(135deg,var(--primary),var(--secondary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:8px; }
-  .stat-label { font-size:12px; color:var(--text-dim); letter-spacing:1px; text-transform:uppercase; }
-  .timeline { position:relative; padding-left:32px; }
-  .timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--primary),var(--secondary),transparent); }
-  .timeline-item { position:relative; margin-bottom:48px; opacity:0; transform:translateX(-20px); transition:all 0.6s ease; }
-  .timeline-item.visible { opacity:1; transform:translateX(0); }
-  .timeline-dot { position:absolute; left:-39px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--primary); border:2px solid var(--bg); box-shadow:0 0 10px var(--primary); animation:pulse 2s ease infinite; }
-  .timeline-card { background:var(--bg3); border:1px solid var(--card-border); border-radius:16px; padding:28px; transition:all 0.3s; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
-  .timeline-card:hover { border-color:rgba(0,102,204,0.4); box-shadow:var(--glow); }
-  .timeline-meta { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
-  .timeline-company { font-size:13px; font-weight:600; color:var(--primary); background:rgba(0,102,204,0.1); padding:3px 12px; border-radius:20px; border:1px solid rgba(0,102,204,0.2); }
-  [data-theme="dark"] .timeline-company { background:rgba(0,212,255,0.1); border-color:rgba(0,212,255,0.2); }
-  .timeline-period { font-size:12px; color:var(--text-dim); letter-spacing:1px; }
-  .timeline-card h3 { font-size:18px; font-weight:700; color:var(--text); margin-bottom:10px; }
-  .timeline-card p { font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:14px; }
-  .tech-tags { display:flex; flex-wrap:wrap; gap:8px; }
-  .tag { font-size:11px; padding:4px 12px; border-radius:20px; font-weight:500; }
-  .tag-platform { background:rgba(123,47,247,0.1); border:1px solid rgba(123,47,247,0.25); color:#7b2ff7; }
-  [data-theme="dark"] .tag-platform { color:#b57bff; }
-  .tag-lang { background:rgba(0,102,204,0.1); border:1px solid rgba(0,102,204,0.2); color:var(--primary); }
-  .tag-framework { background:rgba(229,62,62,0.08); border:1px solid rgba(229,62,62,0.2); color:var(--accent); }
-  .edu-card { background:var(--bg3); border:1px solid var(--card-border); border-radius:16px; padding:32px; display:flex; align-items:center; gap:24px; opacity:0; transform:translateY(20px); transition:all 0.6s; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
-  .edu-card.visible { opacity:1; transform:translateY(0); }
-  .edu-icon { font-size:48px; flex-shrink:0; }
-  .edu-card h3 { font-size:20px; font-weight:700; color:var(--text); margin-bottom:6px; }
-  .edu-card p { color:var(--text-dim); font-size:14px; }
-  footer { text-align:center; padding:60px 24px; color:var(--text-dim); font-size:13px; border-top:1px solid rgba(0,0,0,0.06); }
-  [data-theme="dark"] footer { border-top-color:rgba(255,255,255,0.05); }
-  footer span { color:var(--primary); }
-  .skill-card:nth-child(1){transition-delay:0.0s}.skill-card:nth-child(2){transition-delay:0.1s}.skill-card:nth-child(3){transition-delay:0.2s}.skill-card:nth-child(4){transition-delay:0.3s}.skill-card:nth-child(5){transition-delay:0.4s}.skill-card:nth-child(6){transition-delay:0.5s}
-  .stat-card:nth-child(1){transition-delay:0.0s}.stat-card:nth-child(2){transition-delay:0.1s}.stat-card:nth-child(3){transition-delay:0.2s}.stat-card:nth-child(4){transition-delay:0.3s}
-  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-  @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(6px)} }
-  @keyframes pulse { 0%,100%{box-shadow:0 0 6px var(--primary)} 50%{box-shadow:0 0 14px var(--primary),0 0 28px rgba(0,102,204,0.25)} }
+:root {
+  --primary: #0066cc;
+  --secondary: #6b21e8;
+  --accent: #e53e3e;
+  --bg: #f5f7fa;
+  --bg3: #ffffff;
+  --text: #1a1a2e;
+  --text-dim: #5a6480;
+  --border: rgba(0,102,204,0.15);
+  --glow: 0 4px 24px rgba(0,102,204,0.12);
+}
+[data-theme="dark"] {
+  --primary: #00d4ff;
+  --secondary: #7b2ff7;
+  --bg: #0a0a0f;
+  --bg3: #1a1a28;
+  --text: #e8e8f0;
+  --text-dim: #8888aa;
+  --border: rgba(0,212,255,0.15);
+  --glow: 0 0 20px rgba(0,212,255,0.3);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; overflow-x:hidden; line-height:1.6; transition:background .3s,color .3s; }
+body::before { content:''; position:fixed; inset:0; background:radial-gradient(ellipse at 20% 20%,rgba(107,33,232,.05) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(0,102,204,.05) 0%,transparent 50%); pointer-events:none; z-index:0; }
+body::after { content:''; position:fixed; inset:0; background-image:linear-gradient(rgba(0,102,204,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,102,204,.04) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; z-index:0; }
+[data-theme="dark"] body::before { background:radial-gradient(ellipse at 20% 20%,rgba(123,47,247,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(0,212,255,.06) 0%,transparent 50%); }
+[data-theme="dark"] body::after { background-image:linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px); background-size:60px 60px; }
+.container { max-width:1000px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+
+/* Toolbar */
+.toolbar { position:fixed; top:20px; right:20px; z-index:1000; display:flex; gap:8px; }
+.toolbar-btn { display:flex; align-items:center; gap:6px; padding:8px 16px; border-radius:50px; border:1px solid var(--border); background:var(--bg3); color:var(--text); font-size:13px; font-weight:500; cursor:pointer; transition:all .25s; box-shadow:0 2px 12px rgba(0,0,0,.08); }
+.toolbar-btn:hover { border-color:var(--primary); color:var(--primary); box-shadow:var(--glow); }
+
+/* Hero */
+.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 24px; position:relative; }
+.hero-inner { max-width:700px; }
+.hero-badge { display:inline-block; background:linear-gradient(135deg,rgba(0,102,204,.1),rgba(107,33,232,.1)); border:1px solid rgba(0,102,204,.3); border-radius:50px; padding:6px 20px; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--primary); margin-bottom:28px; opacity:0; animation:fadeUp .8s ease .2s forwards; }
+.hero-name { font-size:clamp(42px,8vw,80px); font-weight:800; line-height:1.1; background:linear-gradient(135deg,#1a1a2e 0%,var(--primary) 50%,var(--secondary) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; opacity:0; animation:fadeUp .8s ease .4s forwards; margin-bottom:8px; }
+[data-theme="dark"] .hero-name { background:linear-gradient(135deg,#fff 0%,var(--primary) 50%,var(--secondary) 100%); -webkit-background-clip:text; background-clip:text; }
+.hero-name-cn { font-size:clamp(18px,3vw,28px); font-weight:300; color:var(--text-dim); opacity:0; animation:fadeUp .8s ease .5s forwards; margin-bottom:24px; }
+.hero-subtitle { font-size:clamp(15px,2.5vw,20px); color:var(--primary); font-weight:400; opacity:0; animation:fadeUp .8s ease .6s forwards; margin-bottom:32px; }
+.hero-contacts { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; opacity:0; animation:fadeUp .8s ease .8s forwards; }
+.contact-item { color:var(--text-dim); font-size:14px; padding:8px 16px; border:1px solid rgba(0,0,0,.08); border-radius:8px; background:rgba(0,0,0,.02); transition:all .3s; }
+[data-theme="dark"] .contact-item { border-color:rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
+.contact-item:hover { border-color:var(--primary); color:var(--primary); }
+.scroll-hint { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--text-dim); font-size:12px; letter-spacing:2px; opacity:0; animation:fadeIn 1s ease 1.5s forwards; }
+.scroll-arrow { width:20px; height:20px; border-right:2px solid var(--primary); border-bottom:2px solid var(--primary); transform:rotate(45deg); animation:bounce 1.5s ease infinite; }
+
+/* Section */
+section { padding:80px 0; }
+.section-header { display:flex; align-items:center; gap:16px; margin-bottom:48px; }
+.section-number { font-size:12px; color:var(--primary); letter-spacing:3px; font-weight:600; }
+.section-title { font-size:clamp(22px,4vw,34px); font-weight:700; background:linear-gradient(135deg,#1a1a2e,var(--text-dim)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+[data-theme="dark"] .section-title { background:linear-gradient(135deg,#fff,var(--text-dim)); -webkit-background-clip:text; background-clip:text; }
+.section-line { flex:1; height:1px; background:linear-gradient(90deg,rgba(0,102,204,.4),transparent); }
+
+/* Stats */
+.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; margin-bottom:60px; }
+.stat-card { background:var(--bg3); border:1px solid var(--border); border-radius:16px; padding:28px 20px; text-align:center; opacity:0; transform:scale(.9); transition:all .5s; box-shadow:0 2px 12px rgba(0,0,0,.06); }
+.stat-card.visible { opacity:1; transform:scale(1); }
+.stat-card:hover { border-color:var(--primary); box-shadow:var(--glow); }
+.stat-number { font-size:42px; font-weight:800; background:linear-gradient(135deg,var(--primary),var(--secondary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:8px; }
+.stat-label { font-size:12px; color:var(--text-dim); letter-spacing:1px; text-transform:uppercase; }
+.stat-card:nth-child(1){transition-delay:.0s}.stat-card:nth-child(2){transition-delay:.1s}
+.stat-card:nth-child(3){transition-delay:.2s}.stat-card:nth-child(4){transition-delay:.3s}
+
+/* Skills grid */
+.skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+
+/* ===== FLIP CARD (skills) ===== */
+.flip-card { perspective:1000px; opacity:0; transform:translateY(30px); transition:opacity .5s, transform .5s; }
+.flip-card.visible { opacity:1; transform:translateY(0); }
+.flip-card:nth-child(1){transition-delay:.0s}.flip-card:nth-child(2){transition-delay:.1s}
+.flip-card:nth-child(3){transition-delay:.2s}.flip-card:nth-child(4){transition-delay:.3s}
+.flip-card:nth-child(5){transition-delay:.4s}.flip-card:nth-child(6){transition-delay:.5s}
+.flip-card-inner { position:relative; width:100%; transition:transform .65s cubic-bezier(.4,0,.2,1); transform-style:preserve-3d; }
+.flip-card.flipping .flip-card-inner { transform:rotateY(180deg); }
+.flip-card-front, .flip-card-back { backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--bg3); border:1px solid var(--border); border-radius:16px; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,.06); transition:border-color .3s,box-shadow .3s; }
+.flip-card-back { position:absolute; top:0; left:0; width:100%; height:100%; transform:rotateY(180deg); display:flex; align-items:center; justify-content:center; }
+.flip-card:hover .flip-card-front, .flip-card:hover .flip-card-back { border-color:var(--primary); box-shadow:var(--glow); }
+.skill-icon { font-size:28px; margin-bottom:12px; }
+.skill-card-name { font-size:15px; font-weight:600; color:var(--primary); margin-bottom:8px; }
+.skill-card-desc { font-size:13px; color:var(--text-dim); line-height:1.6; }
+.flip-card-back .skill-card-desc { text-align:center; font-size:14px; }
+
+/* Timeline */
+.timeline { position:relative; padding-left:32px; }
+.timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--primary),var(--secondary),transparent); }
+.timeline-item { position:relative; margin-bottom:48px; opacity:0; transform:translateX(-20px); transition:opacity .6s, transform .6s; }
+.timeline-item.visible { opacity:1; transform:translateX(0); }
+.timeline-dot { position:absolute; left:-39px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--primary); border:2px solid var(--bg); box-shadow:0 0 10px var(--primary); animation:pulse 2s ease infinite; }
+
+/* ===== FLIP CARD (timeline) ===== */
+.tl-flip { perspective:1200px; }
+.tl-flip-inner { position:relative; transition:transform .65s cubic-bezier(.4,0,.2,1); transform-style:preserve-3d; }
+.tl-flip.flipping .tl-flip-inner { transform:rotateY(180deg); }
+.tl-front, .tl-back { backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--bg3); border:1px solid var(--border); border-radius:16px; padding:28px; box-shadow:0 2px 12px rgba(0,0,0,.06); transition:border-color .3s,box-shadow .3s; }
+.tl-back { position:absolute; top:0; left:0; width:100%; min-height:100%; transform:rotateY(180deg); display:flex; align-items:center; padding:28px; }
+.tl-flip:hover .tl-front, .tl-flip:hover .tl-back { border-color:rgba(0,102,204,.4); box-shadow:var(--glow); }
+[data-theme="dark"] .tl-flip:hover .tl-front, [data-theme="dark"] .tl-flip:hover .tl-back { border-color:rgba(0,212,255,.4); }
+.tl-meta { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px; }
+.tl-company { font-size:13px; font-weight:600; color:var(--primary); background:rgba(0,102,204,.1); padding:3px 12px; border-radius:20px; border:1px solid rgba(0,102,204,.2); }
+[data-theme="dark"] .tl-company { background:rgba(0,212,255,.1); border-color:rgba(0,212,255,.2); }
+.tl-period { font-size:12px; color:var(--text-dim); letter-spacing:1px; }
+.tl-title { font-size:18px; font-weight:700; color:var(--text); margin-bottom:10px; }
+.tl-desc { font-size:14px; color:var(--text-dim); line-height:1.7; margin-bottom:14px; }
+.tl-back .tl-desc { margin-bottom:0; }
+.tech-tags { display:flex; flex-wrap:wrap; gap:8px; }
+.tag { font-size:11px; padding:4px 12px; border-radius:20px; font-weight:500; }
+.tag-platform { background:rgba(123,47,247,.1); border:1px solid rgba(123,47,247,.25); color:#7b2ff7; }
+[data-theme="dark"] .tag-platform { color:#b57bff; }
+.tag-lang { background:rgba(0,102,204,.1); border:1px solid rgba(0,102,204,.2); color:var(--primary); }
+.tag-framework { background:rgba(229,62,62,.08); border:1px solid rgba(229,62,62,.2); color:var(--accent); }
+
+/* Education */
+.edu-card { background:var(--bg3); border:1px solid var(--border); border-radius:16px; padding:32px; display:flex; align-items:center; gap:24px; opacity:0; transform:translateY(20px); transition:all .6s; box-shadow:0 2px 12px rgba(0,0,0,.06); }
+.edu-card.visible { opacity:1; transform:translateY(0); }
+.edu-icon { font-size:48px; flex-shrink:0; }
+.edu-school { font-size:20px; font-weight:700; color:var(--text); margin-bottom:6px; }
+.edu-detail { color:var(--text-dim); font-size:14px; }
+
+footer { text-align:center; padding:60px 24px; color:var(--text-dim); font-size:13px; border-top:1px solid rgba(0,0,0,.06); }
+[data-theme="dark"] footer { border-top-color:rgba(255,255,255,.05); }
+footer span { color:var(--primary); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(6px)} }
+@keyframes pulse { 0%,100%{box-shadow:0 0 6px var(--primary)} 50%{box-shadow:0 0 14px var(--primary),0 0 28px rgba(0,102,204,.25)} }
 </style>
 </head>
 <body>
+
 <div class="toolbar">
-  <button class="toolbar-btn" onclick="toggleLang()"><span>🌐</span><span id="langLabel">中文</span></button>
-  <button class="toolbar-btn" onclick="toggleTheme()"><span id="themeIcon">🌙</span><span id="themeLabel">Dark</span></button>
+  <button class="toolbar-btn" onclick="toggleLang()">🌐 <span id="langLabel">中文</span></button>
+  <button class="toolbar-btn" onclick="toggleTheme()"><span id="themeIcon">🌙</span> <span id="themeLabel">Dark</span></button>
 </div>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge" data-en="Full-Stack Mobile Engineer" data-zh="全栈移动端工程师">Full-Stack Mobile Engineer</div>
+    <div class="hero-badge" id="hero-badge"></div>
     <h1 class="hero-name">Andrew Wang</h1>
     <div class="hero-name-cn">汪奇伟</div>
-    <div class="hero-title" data-en="15+ Years · Flutter · iOS · React Native · AI-Driven Development" data-zh="15年以上 · Flutter · iOS · React Native · AI驱动开发">15+ Years · Flutter · iOS · React Native · AI-Driven Development</div>
-    <div class="hero-contacts"><div class="contact-item">📱 18782498366</div><div class="contact-item">✉️ qwwangcd@cn.ibm.com</div><div class="contact-item">🎓 University of Electronic Science and Technology of China (UESTC) · Software Engineering</div></div>
+    <div class="hero-subtitle" id="hero-subtitle"></div>
+    <div class="hero-contacts" id="hero-contacts"></div>
   </div>
-  <div class="scroll-hint"><span data-en="SCROLL" data-zh="滚动">SCROLL</span><div class="scroll-arrow"></div></div>
+  <div class="scroll-hint"><span id="scroll-text">SCROLL</span><div class="scroll-arrow"></div></div>
 </section>
 
 <div class="container">
-  <div class="stats-row">
-    <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label" data-en="Years Experience" data-zh="年从业经验">Years Experience</div></div>
-    <div class="stat-card"><div class="stat-number">13</div><div class="stat-label" data-en="Major Projects" data-zh="重点项目">Major Projects</div></div>
-    <div class="stat-card"><div class="stat-number">6</div><div class="stat-label" data-en="Companies" data-zh="就职公司">Companies</div></div>
-    <div class="stat-card"><div class="stat-number">8+</div><div class="stat-label" data-en="Tech Stacks" data-zh="技术栈">Tech Stacks</div></div>
-  </div>
+  <div class="stats-row" id="stats-row"></div>
 </div>
 
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="section-number">01</span>
-      <h2 class="section-title" data-en="Core Skills" data-zh="核心技能">Core Skills</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">📱</div>
-        <h3>Flutter &amp; iOS Native</h3>
-        <p>Dart, Swift, Objective-C; high-performance architecture, custom plugins, Runtime/ARC/GCD optimization</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🌐</div>
-        <h3>Hybrid &amp; Web</h3>
-        <p>Vue, Angular, React Native, JavaScript, Webpack</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🔐</div>
-        <h3>Security &amp; Encryption</h3>
-        <p>PKI, RSA, AES/DES, SM1–SM4 (ShangMi), C/C++</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🤖</div>
-        <h3>AI-Driven Development</h3>
-        <p>Cursor, GitHub Copilot, LLMs for refactoring &amp; architecture analysis</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🏗️</div>
-        <h3>Languages</h3>
-        <p>CET-6 (496), TOEIC (725); fluent technical English</p>
-      </div></div>
+<section><div class="container">
+  <div class="section-header">
+    <span class="section-number">01</span>
+    <h2 class="section-title" id="sec-skills-title"></h2>
+    <div class="section-line"></div>
   </div>
-</section>
+  <div class="skills-grid" id="skills-grid"></div>
+</div></section>
 
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="section-number">02</span>
-      <h2 class="section-title" data-en="Project Experience" data-zh="项目经历">Project Experience</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2025.10 — Present" data-zh="2025.10 — 至今">2025.10 — Present</span>
-          </div>
-          <h3>SMB ONE App (UAE · e&amp; Etisalat)</h3>
-          <p data-en="Cutting-edge smart enterprise service app for SMBs in the UAE. Provides Business Insights, Trade License applications, and Corporate Banking Account setup. Features an innovative AI Agent-based conversational interface leveraging advanced NLP to guide users through complex business processes — replacing traditional forms with AI-driven interactions." data-zh="面向阿联酋中小企业的智能企业服务应用。提供商业洞察、营业执照申请和企业银行账户开设功能。采用创新的 AI Agent 对话界面，利用先进 NLP 引导用户完成复杂业务流程，以 AI 驱动的交互取代传统表单。">Cutting-edge smart enterprise service app for SMBs in the UAE. Provides Business Insights, Trade License applications, and Corporate Banking Account setup. Features an innovative AI Agent-based conversational interface leveraging advanced NLP to guide users through complex business processes — replacing traditional forms with AI-driven interactions.</p>
-          <div class="tech-tags"><span class="tag tag-platform">Flutter</span><span class="tag tag-lang">Dart</span><span class="tag tag-framework">AI Agent</span><span class="tag tag-framework">NLP</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2023.12 — Present" data-zh="2023.12 — 至今">2023.12 — Present</span>
-          </div>
-          <h3>TechCheck App — IBM Mainframe QA System</h3>
-          <p data-en="Critical QA monitoring system for IBM Mainframe delivery. Engineered an advanced tracking framework using MQTT protocol to ensure rigorous quality control. Maintains a comprehensive digital audit trail capturing shipping records, high-resolution photography, and defect logs to guarantee zero-defect delivery standards." data-zh="IBM 大型机交付的关键质量监控系统。基于 MQTT 协议构建先进的追踪框架，确保严格的质量管控。维护完整的数字审计记录，涵盖发货记录、高清照片和缺陷日志，保障零缺陷交付标准。">Critical QA monitoring system for IBM Mainframe delivery. Engineered an advanced tracking framework using MQTT protocol to ensure rigorous quality control. Maintains a comprehensive digital audit trail capturing shipping records, high-resolution photography, and defect logs to guarantee zero-defect delivery standards.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-platform">Android</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span><span class="tag tag-framework">MQTT</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2022.09 — 2023.11" data-zh="2022.09 — 2023.11">2022.09 — 2023.11</span>
-          </div>
-          <h3>Tianshi Group — Core Business System</h3>
-          <p data-en="Core business system providing internal staff office, audit, report and other functions. Reviewed existing iOS architecture and provided a highly robust multi-platform reconstruction scheme. Added two major modules — audit management and supervision system — to promote digital transformation with an all-platform scheme." data-zh="天时集团核心业务系统，提供内部员工办公、审计、报表等功能。审查现有 iOS 架构并提供高度健壮的多平台重构方案。新增审计管理和监督系统两大模块，以全平台方案推动数字化转型。">Core business system providing internal staff office, audit, report and other functions. Reviewed existing iOS architecture and provided a highly robust multi-platform reconstruction scheme. Added two major modules — audit management and supervision system — to promote digital transformation with an all-platform scheme.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-platform">Android</span><span class="tag tag-platform">Frontend</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2022.04 — 2022.09" data-zh="2022.04 — 2022.09">2022.04 — 2022.09</span>
-          </div>
-          <h3>Irish Water — Work Order Management</h3>
-          <p data-en="Work order management app for Android on Irish Water System, enabling field workers to manage and track water infrastructure tasks efficiently across Ireland." data-zh="爱尔兰水务系统 Android 工单管理应用，帮助现场工人高效管理和追踪全爱尔兰的水利基础设施任务。">Work order management app for Android on Irish Water System, enabling field workers to manage and track water infrastructure tasks efficiently across Ireland.</p>
-          <div class="tech-tags"><span class="tag tag-platform">Android</span><span class="tag tag-platform">React Native</span><span class="tag tag-lang">Java</span><span class="tag tag-lang">TypeScript</span><span class="tag tag-framework">GraphQL</span><span class="tag tag-framework">MQTT</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2022.02 — 2022.08" data-zh="2022.02 — 2022.08">2022.02 — 2022.08</span>
-          </div>
-          <h3>Qstream — Enterprise Knowledge Platform</h3>
-          <p data-en="Helps enterprise organizations reinforce critical knowledge, skills and behaviors in just minutes a day. Delivers high levels of continuous user engagement at an average of 93%+ through an engaging mobile experience." data-zh="帮助企业组织每天只需几分钟即可强化关键知识、技能和行为。通过引人入胜的移动端体验，持续用户参与度平均达 93% 以上。">Helps enterprise organizations reinforce critical knowledge, skills and behaviors in just minutes a day. Delivers high levels of continuous user engagement at an average of 93%+ through an engaging mobile experience.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-platform">Android</span><span class="tag tag-platform">React Native</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span><span class="tag tag-lang">Java</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2020.10 — 2022.02" data-zh="2020.10 — 2022.02">2020.10 — 2022.02</span>
-          </div>
-          <h3>IBM Client Vantage</h3>
-          <p data-en="Innovative platform for delivering digital content, enabling users to create and consume content, engage clients, and tell a story with dashboard insights. A flagship internal IBM tool for client engagement and analytics." data-zh="创新的数字内容交付平台，支持用户创建和消费内容、客户互动，并通过仪表盘洞察讲述数据故事。IBM 内部客户互动与分析的旗舰工具。">Innovative platform for delivering digital content, enabling users to create and consume content, engage clients, and tell a story with dashboard insights. A flagship internal IBM tool for client engagement and analytics.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM Tianjin</span>
-            <span class="timeline-period" data-en="2020.05 — 2020.10" data-zh="2020.05 — 2020.10">2020.05 — 2020.10</span>
-          </div>
-          <h3>Sunac Butler Manager App 2.0</h3>
-          <p data-en="Inner toB application including customer info management, fee management, KPI review, and task management. Version 2.0 added complete work-order management. Delivered full lifecycle of the iOS platform and cooperated with Asset team for full-stack feature integration." data-zh="内部 toB 应用，涵盖客户信息管理、费用管理、KPI 审核和任务管理。2.0 版本新增完整工单管理功能。负责 iOS 平台全生命周期交付，并与资产团队协作完成全栈功能集成。">Inner toB application including customer info management, fee management, KPI review, and task management. Version 2.0 added complete work-order management. Delivered full lifecycle of the iOS platform and cooperated with Asset team for full-stack feature integration.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM</span>
-            <span class="timeline-period" data-en="2020.07 — 2020.10" data-zh="2020.07 — 2020.10">2020.07 — 2020.10</span>
-          </div>
-          <h3>JazzCash — Pakistan Banking App</h3>
-          <p data-en="Banking client app in Pakistan including transfer, account balance, card management, and life functions. Delivered comprehensive financial services to millions of users across Pakistan." data-zh="巴基斯坦银行客户端应用，包含转账、账户余额、卡片管理和生活服务功能。为巴基斯坦数百万用户提供全面的金融服务。">Banking client app in Pakistan including transfer, account balance, card management, and life functions. Delivered comprehensive financial services to millions of users across Pakistan.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM Tianjin</span>
-            <span class="timeline-period" data-en="2019.11 — 2020.06" data-zh="2019.11 — 2020.06">2019.11 — 2020.06</span>
-          </div>
-          <h3>Netherlands Schiphol Airport App + Admin Portal</h3>
-          <p data-en="Digitization of the entire Risk Assessment and Evaluation process for Amsterdam Schiphol Airport. Developed iOS native app with Swift on cloud-native Kubernetes backend. DevOps pipelines enabled fully automated CI/CD. Also built the Vue-based admin portal for incident report management." data-zh="将阿姆斯特丹史基浦机场的全套风险评估与评价流程数字化。使用 Swift 开发 iOS 原生应用，后端基于云原生 Kubernetes 集群。DevOps 流水线实现全自动 CI/CD。同时构建基于 Vue 的管理后台，用于事故报告管理。">Digitization of the entire Risk Assessment and Evaluation process for Amsterdam Schiphol Airport. Developed iOS native app with Swift on cloud-native Kubernetes backend. DevOps pipelines enabled fully automated CI/CD. Also built the Vue-based admin portal for incident report management.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-platform">Web</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Vue</span><span class="tag tag-framework">Kubernetes</span><span class="tag tag-framework">DevOps</span><span class="tag tag-framework">VueX</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM Chengdu</span>
-            <span class="timeline-period" data-en="2018.10 — 2019.03" data-zh="2018.10 — 2019.03">2018.10 — 2019.03</span>
-          </div>
-          <h3>IBM Safe-Drive</h3>
-          <p data-en="iOS app for drivers to detect auto start/stop driving, driving trip data collection and analytics, and driving behavior analytic tools. Leveraged CoreMotion and GPS for precise trip detection." data-zh="面向驾驶员的 iOS 应用，自动检测行程开始/结束，采集行程数据并进行分析，提供驾驶行为分析工具。利用 CoreMotion 和 GPS 实现精准行程识别。">iOS app for drivers to detect auto start/stop driving, driving trip data collection and analytics, and driving behavior analytic tools. Leveraged CoreMotion and GPS for precise trip detection.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">IBM Chengdu</span>
-            <span class="timeline-period" data-en="2015.07 — 2019.07" data-zh="2015.07 — 2019.07">2015.07 — 2019.07</span>
-          </div>
-          <h3>IBM Solution Gateway (iGBS+) — Mobile Architect</h3>
-          <p data-en="IBM business solution gateway for sales analytics, search, and management. Served as Mobile Architect. Upgraded from iGBS+ merging solutions from Box, Lighthouse, etc. Integrated multiple Catalogs with better UX and social features. Supports all iPhone/iPad devices." data-zh="IBM 业务解决方案网关，用于销售分析、搜索和管理。担任移动端架构师。从 iGBS+ 升级，整合 Box、Lighthouse 等多方解决方案，集成多个目录并优化 UX 和社交功能，支持全系 iPhone/iPad 设备。">IBM business solution gateway for sales analytics, search, and management. Served as Mobile Architect. Upgraded from iGBS+ merging solutions from Box, Lighthouse, etc. Integrated multiple Catalogs with better UX and social features. Supports all iPhone/iPad devices.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-lang">Swift</span><span class="tag tag-lang">Objective-C</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">Dynamicode</span>
-            <span class="timeline-period" data-en="Shanghai · 2013.05 — 2015.07" data-zh="Shanghai · 2013.05 — 2015.07">Shanghai · 2013.05 — 2015.07</span>
-          </div>
-          <h3>DynamicTenant + USBKey Security Tool</h3>
-          <p data-en="DynamicTenant: Alipay tenant management tool with login/out, order search, device management using Objective-C MVC. USBKey Tool: Security tool for online payment — RSA 1024/2048 key-pair generation, RSA/AES/DES/SM2 encrypt/decrypt, sign/verify, SM3/MD5/SHA-1/SHA-256 HASH. Full PKI infrastructure demo." data-zh="DynamicTenant：支付宝商户管理工具，包含登录/登出、订单查询、设备管理，采用 Objective-C MVC 架构。USBKey 工具：网络支付安全工具，支持 RSA 1024/2048 密钥对生成、RSA/AES/DES/SM2 加解密、签名/验签，以及 SM3/MD5/SHA-1/SHA-256 哈希，完整 PKI 基础设施演示。">DynamicTenant: Alipay tenant management tool with login/out, order search, device management using Objective-C MVC. USBKey Tool: Security tool for online payment — RSA 1024/2048 key-pair generation, RSA/AES/DES/SM2 encrypt/decrypt, sign/verify, SM3/MD5/SHA-1/SHA-256 HASH. Full PKI infrastructure demo.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-lang">Objective-C</span><span class="tag tag-framework">PKI</span><span class="tag tag-framework">RSA</span><span class="tag tag-framework">SM2/SM3/SM4</span><span class="tag tag-framework">AES/DES</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">Mobim Technology</span>
-            <span class="timeline-period" data-en="Shanghai · 2010.08 — 2013.05" data-zh="Shanghai · 2010.08 — 2013.05">Shanghai · 2010.08 — 2013.05</span>
-          </div>
-          <h3>imiChat IM + Taotao English App</h3>
-          <p data-en="Developed SDK tools for MTK platform and imiChat IM for 2.5G mobile phones. Built imiChat for iOS/Android with 1-to-1 chat and chatroom. Taotao English app helped users improve pronunciation through gamification — Q-style UI, 50,000+ users." data-zh="为 MTK 平台开发 SDK 工具及 2.5G 手机版 imiChat 即时通讯。构建 iOS/Android 版 imiChat，支持单聊和群聊。淘淘英语应用通过游戏化方式帮助用户提升发音，Q 版 UI 设计，用户超 5 万。">Developed SDK tools for MTK platform and imiChat IM for 2.5G mobile phones. Built imiChat for iOS/Android with 1-to-1 chat and chatroom. Taotao English app helped users improve pronunciation through gamification — Q-style UI, 50,000+ users.</p>
-          <div class="tech-tags"><span class="tag tag-platform">iOS</span><span class="tag tag-platform">Android</span><span class="tag tag-platform">MTK</span><span class="tag tag-lang">Objective-C</span><span class="tag tag-lang">Java</span></div>
-        </div>
-      </div></div>
+<section><div class="container">
+  <div class="section-header">
+    <span class="section-number">02</span>
+    <h2 class="section-title" id="sec-projects-title"></h2>
+    <div class="section-line"></div>
   </div>
-</section>
+  <div class="timeline" id="projects-timeline"></div>
+</div></section>
 
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="section-number">03</span>
-      <h2 class="section-title" data-en="Early Career" data-zh="早期经历">Early Career</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">TCL JRD</span>
-            <span class="timeline-period" data-en="Shanghai · 2010.01 — 2010.08" data-zh="Shanghai · 2010.01 — 2010.08">Shanghai · 2010.01 — 2010.08</span>
-          </div>
-          <h3>Feature Phone SMS/Camera/Video</h3>
-          <p data-en="For i-mobile (ISP in Thailand), worked on 2090/2290/6090 projects. Led Camera/Video module in 6090 and completed Camera/Video porting from 6238 to 6235." data-zh="为泰国运营商 i-mobile 参与 2090/2290/6090 项目开发。主导 6090 机型的摄像头/视频模块，完成从 6238 到 6235 平台的摄像头/视频移植工作。">For i-mobile (ISP in Thailand), worked on 2090/2290/6090 projects. Led Camera/Video module in 6090 and completed Camera/Video porting from 6238 to 6235.</p>
-          <div class="tech-tags"><span class="tag tag-platform">Feature Phone</span><span class="tag tag-lang">C/C++</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">Flextronics Mobile</span>
-            <span class="timeline-period" data-en="Chengdu · 2008.03 — 2010.01" data-zh="Chengdu · 2008.03 — 2010.01">Chengdu · 2008.03 — 2010.01</span>
-          </div>
-          <h3>Nokia TD-SCDMA / LG GSM Mobile</h3>
-          <p data-en="Nokia TD-SCDMA: Organizer module (calculator, to-do list). LG GSM: SMS/EMS/STK module lead, managing a team of 5 people. Bug fixes, new feature development, documentation." data-zh="诺基亚 TD-SCDMA：负责日程管理模块（计算器、待办事项）。LG GSM：担任 SMS/EMS/STK 模块负责人，管理 5 人团队，负责缺陷修复、新功能开发和文档编写。">Nokia TD-SCDMA: Organizer module (calculator, to-do list). LG GSM: SMS/EMS/STK module lead, managing a team of 5 people. Bug fixes, new feature development, documentation.</p>
-          <div class="tech-tags"><span class="tag tag-platform">ESIM RapidPlus</span><span class="tag tag-lang">C/C++</span></div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-company">Hisense Mobile</span>
-            <span class="timeline-period" data-en="Qingdao · 2006.10 — 2008.02" data-zh="Qingdao · 2006.10 — 2008.02">Qingdao · 2006.10 — 2008.02</span>
-          </div>
-          <h3>CDMA Feature Phone — BREW Platform</h3>
-          <p data-en="Designed and debugged Assistant Menu for DAXIAN/TCL CDMA phones on Qualcomm BREW platform. Maintained STK (SIM card Tool Kit) application. Undertook software testing across multiple cities." data-zh="在高通 BREW 平台上为大显/TCL CDMA 手机设计和调试辅助菜单。维护 STK（SIM 卡工具包）应用。承担多城市软件测试工作。">Designed and debugged Assistant Menu for DAXIAN/TCL CDMA phones on Qualcomm BREW platform. Maintained STK (SIM card Tool Kit) application. Undertook software testing across multiple cities.</p>
-          <div class="tech-tags"><span class="tag tag-platform">BREW</span><span class="tag tag-platform">CDMA</span><span class="tag tag-lang">C/C++</span></div>
-        </div>
-      </div></div>
+<section><div class="container">
+  <div class="section-header">
+    <span class="section-number">03</span>
+    <h2 class="section-title" id="sec-early-title"></h2>
+    <div class="section-line"></div>
   </div>
-</section>
+  <div class="timeline" id="early-timeline"></div>
+</div></section>
 
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="section-number">04</span>
-      <h2 class="section-title" data-en="Education" data-zh="教育背景">Education</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-icon">🎓</div>
-      <div>
-        <h3 data-en="University of Electronic Science and Technology of China (UESTC)" data-zh="电子科技大学（UESTC）">University of Electronic Science and Technology of China (UESTC) · 电子科技大学</h3>
-        <p data-en="Bachelor's Degree · Software Engineering · Chengdu, China" data-zh="本科 · 软件工程 · 中国成都">Bachelor&#x27;s Degree · Software Engineering · Chengdu, China · 本科 · 软件工程 · 中国成都</p>
-      </div>
+<section><div class="container">
+  <div class="section-header">
+    <span class="section-number">04</span>
+    <h2 class="section-title" id="sec-edu-title"></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-card" id="edu-card">
+    <div class="edu-icon">🎓</div>
+    <div>
+      <div class="edu-school" id="edu-school"></div>
+      <div class="edu-detail" id="edu-detail"></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<footer>
-  <p>Andrew Wang 汪奇伟 &nbsp;·&nbsp; <span data-en="15+ Years Full-Stack Mobile Engineer" data-zh="15年以上全栈移动端工程师">15+ Years Full-Stack Mobile Engineer</span> &nbsp;·&nbsp; IBM · Flutter · iOS · React Native</p>
-</footer>
+<footer><p id="footer-text"></p></footer>
 
+<script src="i18n.js"></script>
 <script>
-  const obs = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('visible')), {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.skill-card,.timeline-item,.stat-card,.edu-card').forEach(el => obs.observe(el));
+const SKILL_ICONS = ['📱','🌐','🔐','🤖','🏗️','🌍'];
+const PLATFORM_TAGS = new Set(['iOS','Android','Web','Frontend','MTK','BREW','CDMA','Feature Phone','ESIM RapidPlus','React Native']);
+const LANG_TAGS = new Set(['Dart','Swift','Objective-C','Java','TypeScript','JavaScript','C/C++','Vue']);
 
-  const cObs = new IntersectionObserver(e => e.forEach(x => {
-    if (!x.isIntersecting) return;
-    const el = x.target.querySelector('.stat-number');
-    const num = parseInt(el.textContent), suf = el.textContent.replace(/[0-9]/g,'');
-    let s=0; const step=ts=>{ if(!s)s=ts; const p=Math.min((ts-s)/1500,1),e2=1-Math.pow(1-p,3); el.textContent=Math.floor(e2*num)+suf; if(p<1)requestAnimationFrame(step); }; requestAnimationFrame(step);
-    cObs.unobserve(x.target);
-  }), {threshold:0.5});
+const LABELS = {
+  en: { badge:'Full-Stack Mobile Engineer',
+        subtitle:'15+ Years · Flutter · iOS · React Native · AI-Driven Development',
+        scroll:'SCROLL', skills:'Core Skills', projects:'Project Experience',
+        early:'Early Career', edu:'Education',
+        footer:'15+ Years Full-Stack Mobile Engineer' },
+  zh: { badge:'全栈移动端工程师',
+        subtitle:'15年以上 · Flutter · iOS · React Native · AI驱动开发',
+        scroll:'滚动', skills:'核心技能', projects:'项目经历',
+        early:'早期经历', edu:'教育背景',
+        footer:'15年以上全栈移动端工程师' }
+};
+const STATS = {
+  en: [{n:'15+',l:'Years Experience'},{n:'13',l:'Major Projects'},{n:'6',l:'Companies'},{n:'8+',l:'Tech Stacks'}],
+  zh: [{n:'15+',l:'年从业经验'},{n:'13',l:'重点项目'},{n:'6',l:'就职公司'},{n:'8+',l:'技术栈'}]
+};
+
+function tagClass(t) {
+  if (LANG_TAGS.has(t)) return 'tag-lang';
+  if (PLATFORM_TAGS.has(t)) return 'tag-platform';
+  return 'tag-framework';
+}
+function tagsHtml(tags) {
+  return tags.map(t => `<span class="tag ${tagClass(t)}">${t}</span>`).join('');
+}
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+let currentLang = 'en';
+let initialized = false;
+
+function renderAll(lang, animate) {
+  const d = I18N[lang];
+  const L = LABELS[lang];
+  const S = STATS[lang];
+
+  document.getElementById('hero-badge').textContent = L.badge;
+  document.getElementById('hero-subtitle').textContent = L.subtitle;
+  document.getElementById('scroll-text').textContent = L.scroll;
+  document.getElementById('hero-contacts').innerHTML =
+    d.contacts.map(c => `<div class="contact-item">${esc(c)}</div>`).join('');
+
+  document.getElementById('stats-row').innerHTML = S.map((s,i) =>
+    `<div class="stat-card" style="transition-delay:${i*0.1}s">
+      <div class="stat-number">${s.n}</div>
+      <div class="stat-label">${s.l}</div>
+    </div>`).join('');
+
+  document.getElementById('sec-skills-title').textContent = L.skills;
+  document.getElementById('sec-projects-title').textContent = L.projects;
+  document.getElementById('sec-early-title').textContent = L.early;
+  document.getElementById('sec-edu-title').textContent = L.edu;
+
+  document.getElementById('skills-grid').innerHTML = d.skills.map((s,i) =>
+    `<div class="flip-card" style="transition-delay:${i*0.1}s">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="skill-icon">${SKILL_ICONS[i]||'⚡'}</div>
+          <div class="skill-card-name">${esc(s.name)}</div>
+          <div class="skill-card-desc">${esc(s.desc)}</div>
+        </div>
+        <div class="flip-card-back">
+          <div class="skill-card-desc">${esc(s.desc)}</div>
+        </div>
+      </div>
+    </div>`).join('');
+
+  function tlHtml(items) {
+    return items.map(item =>
+      `<div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="tl-flip">
+          <div class="tl-flip-inner">
+            <div class="tl-front">
+              <div class="tl-meta">
+                <span class="tl-company">${esc(item.company)}</span>
+                <span class="tl-period">${esc(item.period)}</span>
+              </div>
+              <div class="tl-title">${esc(item.title)}</div>
+              <div class="tl-desc">${esc(item.desc)}</div>
+              <div class="tech-tags">${tagsHtml(item.tags)}</div>
+            </div>
+            <div class="tl-back">
+              <div class="tl-desc">${esc(item.desc)}</div>
+            </div>
+          </div>
+        </div>
+      </div>`).join('');
+  }
+
+  document.getElementById('projects-timeline').innerHTML = tlHtml(d.projects);
+  document.getElementById('early-timeline').innerHTML = tlHtml(d.early);
+
+  document.getElementById('edu-school').textContent = d.education.school;
+  document.getElementById('edu-detail').textContent = d.education.detail;
+  document.getElementById('footer-text').innerHTML =
+    `Andrew Wang 汪奇伟 &nbsp;·&nbsp; <span>${L.footer}</span> &nbsp;·&nbsp; IBM · Flutter · iOS · React Native`;
+
+  setupObservers();
+}
+
+function setupObservers() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.flip-card:not(.visible), .timeline-item:not(.visible), .stat-card:not(.visible), #edu-card:not(.visible)')
+    .forEach(el => obs.observe(el));
+
+  const cObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target.querySelector('.stat-number');
+      const num = parseInt(el.textContent), suf = el.textContent.replace(/[0-9]/g,'');
+      let s = 0;
+      const step = ts => {
+        if (!s) s = ts;
+        const p = Math.min((ts-s)/1500,1), ease = 1-Math.pow(1-p,3);
+        el.textContent = Math.floor(ease*num)+suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      cObs.unobserve(e.target);
+    });
+  }, { threshold: 0.5 });
   document.querySelectorAll('.stat-card').forEach(el => cObs.observe(el));
+}
 
-  let lang='en';
-  function toggleLang(){
-    lang = lang==='en'?'zh':'en';
-    document.getElementById('langLabel').textContent = lang==='zh'?'English':'中文';
-    document.querySelectorAll('[data-en][data-zh]').forEach(el => el.textContent = lang==='zh'?el.dataset.zh:el.dataset.en);
-  }
+// Language toggle: flip all cards, swap content at midpoint
+function toggleLang() {
+  const newLang = currentLang === 'en' ? 'zh' : 'en';
+  document.getElementById('langLabel').textContent = newLang === 'en' ? '中文' : 'English';
 
-  let theme='light';
-  function toggleTheme(){
-    theme = theme==='light'?'dark':'light';
-    document.documentElement.setAttribute('data-theme', theme==='dark'?'dark':'');
-    document.getElementById('themeIcon').textContent = theme==='dark'?'☀️':'🌙';
-    document.getElementById('themeLabel').textContent = theme==='dark'?'Light':'Dark';
-  }
+  // Add flipping class to all flip targets
+  const allFlips = document.querySelectorAll('.flip-card, .tl-flip');
+  allFlips.forEach(el => el.classList.add('flipping'));
+
+  // At midpoint of animation, swap content
+  setTimeout(() => {
+    currentLang = newLang;
+    renderAll(currentLang);
+    // Re-mark already-visible items as visible immediately
+    document.querySelectorAll('.flip-card, .timeline-item, .stat-card, #edu-card').forEach(el => {
+      el.classList.add('visible');
+    });
+    // Remove flipping after full animation
+    setTimeout(() => {
+      document.querySelectorAll('.flip-card, .tl-flip').forEach(el => el.classList.remove('flipping'));
+    }, 350);
+  }, 325);
+}
+
+// Theme toggle
+let theme = 'light';
+function toggleTheme() {
+  theme = theme === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
+  document.getElementById('themeIcon').textContent = theme === 'dark' ? '☀️' : '🌙';
+  document.getElementById('themeLabel').textContent = theme === 'dark' ? 'Light' : 'Dark';
+}
+
+// Init
+renderAll('en');
 </script>
 </body>
 </html>

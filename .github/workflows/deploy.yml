@@ -3,7 +3,7 @@ name: Build & Deploy Resume
 on:
   push:
     branches: [main]
-    paths: [resume.md, build.py]
+    paths: [resume.en.md, resume.zh.md, build.py]
 
 permissions:
   contents: write
@@ -14,13 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build index.html from resume.md
+      - name: Build i18n.js from markdown files
         run: python3 build.py
 
-      - name: Commit generated index.html
+      - name: Commit generated i18n.js
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git diff --cached --quiet || git commit -m "chore: rebuild index.html from resume.md"
+          git add i18n.js
+          git diff --cached --quiet || git commit -m "chore: rebuild i18n.js"
           git push
