@@ -16,11 +16,11 @@
 
 ## 核心技能
 
-- **Flutter & iOS 原生** — Dart、Swift、Objective-C；高性能架构、自定义插件、Runtime/ARC/GCD 优化
-- **混合开发 & Web** — Vue、Angular、React Native、JavaScript、Webpack
-- **安全 & 加密** — PKI、RSA、AES/DES、国密 SM1–SM4，C/C++
-- **AI 驱动开发** — Cursor、GitHub Copilot、大语言模型辅助重构与架构分析
-- **语言能力** — 英语六级（496）、托业（725）；流利的技术英语
+- Flutter & iOS 原生 — Dart、Swift、Objective-C；高性能架构、自定义插件、Runtime/ARC/GCD 优化
+- 混合开发 & Web — Vue、Angular、React Native、JavaScript、Webpack
+- 安全 & 加密 — PKI、RSA、AES/DES、国密 SM1–SM4，C/C++
+- AI 驱动开发 — Cursor、GitHub Copilot、大语言模型辅助重构与架构分析
+- 语言能力 — 英语六级（496）、托业（725）；流利的技术英语
 
 ---
 
@@ -174,5 +174,5 @@ DynamicTenant：支付宝商户管理工具，包含登录/登出、订单查询
 
 ## 教育背景
 
-**电子科技大学（UESTC）**
+**成都电子科技大学（UESTC）**
 本科 · 软件工程 · 中国成都
