@@ -29,7 +29,9 @@ def parse_md(path):
         for line in sk.group(1).strip().split('\n'):
             m2 = re.match(r'- \*\*(.+?)\*\* — (.+)', line.strip())
             if m2:
-                data['skills'].append({'name': m2.group(1), 'desc': m2.group(2)})
+                # Strip any remaining markdown bold markers from desc
+                desc = re.sub(r'\*\*(.+?)\*\*', r'\1', m2.group(2))
+                data['skills'].append({'name': m2.group(1), 'desc': desc})
 
     def parse_section(text):
         items = []
